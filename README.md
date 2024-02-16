@@ -80,3 +80,5 @@ There is also an additional story for course deliverable.
 We have set two levels of priorities:
 * Required (for the course's deliverables)
 * Nice to have (in case we have extra time or decide to continue development even after the course)
+
+Tasks have been ordered in organic way allowing the game to gain more useful features and by placing dependencies first (like the terrain and sky before trying to move pieces in the game).
