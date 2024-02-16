@@ -1,6 +1,8 @@
 # Tetris 3D
-Group III's project for SWE 6733 in Spring 2024.
 
+![](assets/logo.png)
+
+Group III's project for SWE 6733 in Spring 2024.
 ## Team
 
 * Julian Hall [Product owner]
@@ -10,6 +12,7 @@ Group III's project for SWE 6733 in Spring 2024.
 
 
 ## The game
+
 
 ### Trivia
 
@@ -82,3 +85,7 @@ We have set two levels of priorities:
 * Nice to have (in case we have extra time or decide to continue development even after the course)
 
 Tasks have been ordered in organic way allowing the game to gain more useful features and by placing dependencies first (like the terrain and sky before trying to move pieces in the game).
+
+## Initial mock game play screenshots
+
+![](assets/gameplay.png)
