@@ -76,5 +76,7 @@ crashlytics-build.properties
 tetris3dgame/Assets/TextMesh Pro/*
 tetris3dgame/Library/*
 tetris3dgame/Logs/*
+tetris3dgame/Build/*
+tetris3dgame/Builds/*
 tetris3dgame/ProjectSettings/Packages/*
 tetris3dgame/ProjectSettings/Packages/*
