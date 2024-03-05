@@ -9,6 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/Assets/[Tt]extMesh Pro/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -70,3 +71,10 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+// Unity Assets
+tetris3dgame/Assets/TextMesh Pro/*
+tetris3dgame/Library/*
+tetris3dgame/Logs/*
+tetris3dgame/ProjectSettings/Packages/*
+tetris3dgame/ProjectSettings/Packages/*
