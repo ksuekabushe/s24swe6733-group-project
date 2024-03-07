@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InvisibleScript : MonoBehaviour
+namespace Tetris3D
 {
-    public Renderer rend;
-
-    void Start()
+    public class InvisibleScript : MonoBehaviour
     {
-        rend = GetComponent<Renderer>();
-        rend.enabled = false;
+        public Renderer rend;
+
+        void Start()
+        {
+            rend = GetComponent<Renderer>();
+            rend.enabled = false;
+        }
     }
 }

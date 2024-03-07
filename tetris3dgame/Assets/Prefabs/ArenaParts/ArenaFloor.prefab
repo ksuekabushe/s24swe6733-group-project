@@ -93,6 +93,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaRow (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -154,6 +158,10 @@ PrefabInstance:
     - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
       propertyPath: m_Name
       value: ArenaRow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -217,6 +225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaRow (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -278,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
       propertyPath: m_Name
       value: ArenaRow (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -341,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaRow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -402,6 +422,10 @@ PrefabInstance:
     - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
       propertyPath: m_Name
       value: ArenaRow (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -465,6 +489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaRow (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -526,6 +554,10 @@ PrefabInstance:
     - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
       propertyPath: m_Name
       value: ArenaRow (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -589,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArenaRow (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -650,6 +686,10 @@ PrefabInstance:
     - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
       propertyPath: m_Name
       value: ArenaRow (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910232897352518040, guid: e5d88d75256becf47b4d1eb0ecd0136e, type: 3}
+      propertyPath: m_TagString
+      value: Row3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

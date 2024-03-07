@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayerMovement : MonoBehaviour
+namespace Tetris3D
 {
-    public Transform playerTransform;
-    public Vector3 offset;
-
-    // Update is called once per frame
-    void Update()
+    public class FollowPlayerMovement : MonoBehaviour
     {
-        this.transform.position = playerTransform.position + offset;
+        public Transform playerTransform;
+        public Vector3 offset;
+
+        // Update is called once per frame
+        void Update()
+        {
+            this.transform.position = playerTransform.position + offset;
+            this.transform.rotation = playerTransform.rotation;
+        }
     }
 }

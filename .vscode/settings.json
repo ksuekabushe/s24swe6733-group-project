@@ -1,0 +1,12 @@
+{
+    "dotnet.defaultSolution": "Tetris3D.sln",
+    "git.ignoreLimitWarning": true,
+    "cSpell.words": [
+        "Behaviour",
+        "Rigidbody",
+        "TESSERACT",
+        "Tetromino",
+        "tetrominoes",
+        "UGUI"
+    ]
+}
