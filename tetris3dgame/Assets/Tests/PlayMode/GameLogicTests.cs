@@ -8,7 +8,7 @@ public class GameLogicTests
 {
     PlayerMovementRestrictions _playerMovementRestrictions = new PlayerMovementRestrictions(-10f, 10f, -10f, 10f, -10f, 10f);
     Vector3 _maxVector = new Vector3(10f, 10f, 10f);
-    Vector3 _minVector = new Vector3(-10f, -10f, -10f)
+    Vector3 _minVector = new Vector3(-10f, -10f, -10f);
 
     #region Move Tests
 
