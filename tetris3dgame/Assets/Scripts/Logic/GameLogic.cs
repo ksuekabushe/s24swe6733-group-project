@@ -18,7 +18,9 @@ namespace Tetris3D.Logic
         public static int floorsDestroyed = 0;
         public static Tetromino currentTetromino;
         public static Tetromino nextTetromino;
-        public static Tetromino[] tetrominoesUsed = { };
+
+        private static Tetromino[] _tetrominoesUsed = { };
+
         public static void moveTetromino(Rigidbody tetrominoBody, RelativeMovementDirection movement, MovementRestrictions movementRestrictions)
         {
             // TODO implement (1-6 rotations + 7-0 translations and "-" for down translations)
