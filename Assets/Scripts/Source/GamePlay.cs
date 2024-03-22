@@ -60,7 +60,7 @@ namespace Tetris3D
         public float tetrominoMinimumY = -1.15f;
         public float tetrominoMaximumY =  17.85f;
         public float tetrominoMinimumZ =  -0.5f;
-        public float tetrominoMaximumZ = 0.5f;
+        public float tetrominoMaximumZ = 2.5f;
 
         public Vector3 initialPosition; // Initial player position
         public Vector3 initialTetrominoPosition; // Initial player position
@@ -187,20 +187,20 @@ namespace Tetris3D
             GameLogic.setGameObjectMaterial(ground, groundMaterial);
 
             GameLogic.tetrominoReady = true;
+            GameLogic.gameIsPaused = false;
         }
 
 
-        void FixedUpdate()
+        void Update()
         {
             if (!GameLogic.gameIsPaused &&
                 !GameLogic.playerMovingTetromino &&
                 GameLogic.tetrominoReady &&
-                !GameLogic.tetrominoHasCollided
+                !GameLogic.tetrominoHasCollided &&
+                GameLogic.currentTetromino
             ) {
-                if (!currentTetromino) {
-                    currentTetromino = tesseractTetromino;
-                }
-                var body = currentTetromino.GetComponent<Rigidbody>();
+                UnityEngine.Debug.Log($"Tetromino moving down on its own");
+                var body = GameLogic.currentTetromino.GetComponent<Rigidbody>();
                 GameLogic.moveTetromino(body, RelativeMovementDirection.MOVE_DOWN, new MovementRestrictions(
                     tetrominoMinimumX,
                     tetrominoMaximumX,

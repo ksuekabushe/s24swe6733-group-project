@@ -99,7 +99,7 @@ namespace Tetris3D
                 }
                 else if (movement == RelativeMovementDirection.TURN_DOWN)
                 {
-                    UnityEngine.Debug.Log("Turn tetromino backward");
+                    UnityEngine.Debug.Log("Turn tetromino down");
                     tetrominoBody.MoveRotation(tetrominoBody.rotation * Quaternion.Euler(new Vector3(0, 0, -GameLogic.tetrominoUnitRotation) * Time.fixedDeltaTime));
                 }
                 else
@@ -171,13 +171,17 @@ namespace Tetris3D
                             newPosition.z <= movementRestrictions.maximum_z && newPosition.z >= movementRestrictions.minimum_z
                         )
                     {
+                        UnityEngine.Debug.Log("Tetromino position updated");
                         tetrominoBody.position = newPosition;
+                    } else {
+                        UnityEngine.Debug.Log("Tetromino could be out of bounds, not updating");
                     }
                 }
             } catch (Exception error){
                 GameLogic.playerMovingTetromino = false;
                 throw error;
             }
+            GameLogic.playerMovingTetromino = false;
         }
 
         public static void movePlayer(Rigidbody playerBody, RelativeMovementDirection movement, MovementRestrictions movementRestrictions)

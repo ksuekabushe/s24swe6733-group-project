@@ -8,7 +8,7 @@ namespace Tetris3D
 {
     public class GameLogicTests
     {
-        /*private MovementRestrictions _playerMovementRestrictions = new MovementRestrictions(-10f, 10f, -10f, 10f, -10f, 10f);
+        private MovementRestrictions _playerMovementRestrictions = new MovementRestrictions(-10f, 10f, -10f, 10f, -10f, 10f);
         private Vector3 _maxVector = new Vector3(10f, 10f, 10f);
         private Vector3 _minVector = new Vector3(-10f, -10f, -10f);
         private static float _moveDuration = 0.012f;
@@ -19,84 +19,84 @@ namespace Tetris3D
         public IEnumerator MoveUpTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_UP, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
-            Assert.Equals(new Vector3(0f, 0f + GameLogicTests.upwardDisplacement, 0f), rigidBody.position);
+            Assert.Equals(new Vector3(0f, 0f + GameLogic.playerUpwardDisplacement, 0f), rigidBody.position);
         }
 
         [UnityTest]
         public IEnumerator MoveDownTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_DOWN, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
-            Assert.Equals(new Vector3(0f, 0f - GameLogicTests.upwardDisplacement, 0f), rigidBody.position);
+            Assert.Equals(new Vector3(0f, 0f - GameLogic.playerUpwardDisplacement, 0f), rigidBody.position);
         }
 
         [UnityTest]
         public IEnumerator MoveRightTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_RIGHT, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
-            Assert.Equals(new Vector3(0f + GameLogicTests.sidewaysDisplacement, 0f, 0f), rigidBody.position);
+            Assert.Equals(new Vector3(0f + GameLogic.playerSidewaysDisplacement, 0f, 0f), rigidBody.position);
         }
 
         [UnityTest]
         public IEnumerator MoveLeftTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_LEFT, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
-            Assert.Equals(new Vector3(0f - GameLogicTests.sidewaysDisplacement, 0f, 0f), rigidBody.position);
+            Assert.Equals(new Vector3(0f - GameLogic.playerSidewaysDisplacement, 0f, 0f), rigidBody.position);
         }
 
         [UnityTest]
         public IEnumerator MoveForwardTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
-            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_FRONT, _playerMovementRestrictions);
+            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_FORWARD, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
-            Assert.Equals(new Vector3(0f, 0f, 0f + GameLogicTests.forwardDisplacement), rigidBody.position);
+            Assert.Equals(new Vector3(0f, 0f, 0f + GameLogic.playerForwardDisplacement), rigidBody.position);
         }
 
         [UnityTest]
         public IEnumerator MoveBackTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
-            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_BACK, _playerMovementRestrictions);
+            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_BACKWARD, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
-            Assert.Equals(new Vector3(0f, 0f, 0f - GameLogicTests.forwardDisplacement), rigidBody.position);
+            Assert.Equals(new Vector3(0f, 0f, 0f - GameLogic.playerForwardDisplacement), rigidBody.position);
         }
         #endregion
 
@@ -105,8 +105,8 @@ namespace Tetris3D
         public IEnumerator MoveUpLimitTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             rigidBody.position = _maxVector;
 
@@ -121,8 +121,8 @@ namespace Tetris3D
         public IEnumerator MoveDownLimitTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             rigidBody.position = _minVector;
 
@@ -137,8 +137,8 @@ namespace Tetris3D
         public IEnumerator MoveRightLimitTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             rigidBody.position = _maxVector;
 
@@ -153,8 +153,8 @@ namespace Tetris3D
         public IEnumerator MoveLeftLimitTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             rigidBody.position = _minVector;
 
@@ -169,12 +169,12 @@ namespace Tetris3D
         public IEnumerator MoveForwardLimitTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             rigidBody.position = _maxVector;
 
-            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_FRONT, _playerMovementRestrictions);
+            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_FORWARD, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
@@ -185,19 +185,17 @@ namespace Tetris3D
         public IEnumerator MoveBackLimitTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent(typeof(RigidBody)) as RigidBody;
-            rigidBody = gameObject.GetComponent<Rigidbody>();
+            gameObject.AddComponent(typeof(Rigidbody));
+            var rigidBody = gameObject.GetComponent<Rigidbody>();
 
             rigidBody.position = _minVector;
 
-            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_BACK, _playerMovementRestrictions);
+            GameLogic.movePlayer(rigidBody, RelativeMovementDirection.MOVE_BACKWARD, _playerMovementRestrictions);
 
             yield return new WaitForSeconds(GameLogicTests._moveDuration);
 
             Assert.Equals(_minVector, rigidBody.position);
         }
         #endregion
-*/
     }
-
 }
