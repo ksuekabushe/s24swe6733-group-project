@@ -1,4 +1,15 @@
 {
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.gitmodules": true,
+        "build/": false,
+        "Build/": false,
+        "Library/": true,
+        "library/": true,
+        "temp/": true,
+        "Temp/": true
+    },
     "dotnet.defaultSolution": "Tetris3D.sln",
     "git.ignoreLimitWarning": true,
     "cSpell.words": [

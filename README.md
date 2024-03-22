@@ -1,6 +1,6 @@
 # Tetris 3D
 
-![](assets/logo.png)
+![](readme_assets/logo.png)
 
 Group III's project for SWE 6733 in Spring 2024.
 ## Team
@@ -88,4 +88,4 @@ Tasks have been ordered in organic way allowing the game to gain more useful fea
 
 ## Initial mock game play screenshots
 
-![](assets/gameplay.png)
+![](readme_assets/gameplay.png)

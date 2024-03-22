@@ -25,6 +25,33 @@ namespace Tetris3D.Logic
         {
             // TODO implement (1-6 rotations + 7-0 translations and "-" for down translations)
         }
+
+        public static SubPiece[] findMatchingArenaSubPieces(Arena arena, SubPiece[] tetrominoPieces)
+        {
+            // TODO: Return the sub pieces that match the locations of the tetromino sub pieces
+        }
+
+        public static void updateArenaSubPieces(Arena arena, SubPiece[] tetrominoPieces)
+        {
+            var subPieces = findMatchingArenaSubPieces(arena,tetrominoPieces);
+            // TODO: Make sub-pieces visible and match material with tetromino
+        }
+
+        public static SubPiece[] getTetrominoSubPieces(GameObject tetromino)
+        {
+            // TODO: Return sub pieces with the same position, center
+        }
+
+        public static void onTetrominoLanding(Arena arena, GameObject tetromino)
+        {
+            // TODO: Make the tetromino invisible
+            updateArenaSubPieces(arena, getTetrominoSubPieces(tetromino));
+        }
+
+        public static Arena getArena()
+        {
+            // TODO: implement
+        }
         public static void movePlayer(Rigidbody playerBody, RelativeMovementDirection movement, MovementRestrictions movementRestrictions)
         {
             var displacement = new Vector3(0, 0, 0);
