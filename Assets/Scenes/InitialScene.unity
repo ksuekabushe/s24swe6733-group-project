@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262328215}
   - component: {fileID: 262328216}
+  - component: {fileID: 262328217}
   m_Layer: 0
   m_Name: GameLogicPlaceholder
   m_TagString: Untagged
@@ -204,22 +205,38 @@ MonoBehaviour:
   snakeTetromino: {fileID: 4577503781587055583}
   tesseractTetromino: {fileID: 1821783787114097986}
   ground: {fileID: 1372544254}
-  playerMinimumX: -4
-  playerMaximumX: 4
+  playerMinimumX: -35
+  playerMaximumX: 35
   playerMinimumY: 0
   playerMaximumY: 19
-  playerMinimumZ: -4
-  playerMaximumZ: 4
+  playerMinimumZ: -35
+  playerMaximumZ: 35
   tetrominoMinimumX: -0.5
   tetrominoMaximumX: 0.5
   tetrominoMinimumY: -1.15
   tetrominoMaximumY: 17.85
   tetrominoMinimumZ: -0.5
   tetrominoMaximumZ: 0.5
+  initialPosition: {x: 0, y: 4, z: -20}
   initialTetrominoPosition: {x: 0, y: 16.85, z: 0}
-  sidewaysDisplacement: 10
-  forwardDisplacement: 10
-  upwardDisplacement: 10
+  playerSidewaysDisplacement: 10
+  playerForwardDisplacement: 10
+  playerUpwardDisplacement: 10
+  tetrominoSidewaysDisplacement: 10
+  tetrominoForwardDisplacement: 10
+  tetrominoUpwardDisplacement: 0.2
+--- !u!114 &262328217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262328214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51efdc0d1162fe44c8690ba1d8a286cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313957820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 411758432338324795, guid: ba599c3154dbdc0459207ac47ed320ea, type: 3}
@@ -271,16 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 766083364}
-  sidewaysDisplacement: 10
-  forwardDisplacement: 10
-  upwardDisplacement: 10
-  unitRotation: 500
-  minimumX: -40
-  maximumX: 40
-  minimumY: 1
-  maximumY: 30
-  minimumZ: -40
-  maximumZ: 40
 --- !u!82 &766083369
 AudioSource:
   m_ObjectHideFlags: 0
@@ -886,15 +893,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5883450055868084730, guid: 094fe9aafcfb6ab4dba26e0e649e4d18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5883450055868084730, guid: 094fe9aafcfb6ab4dba26e0e649e4d18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.2
+      value: 16.85
       objectReference: {fileID: 0}
     - target: {fileID: 5883450055868084730, guid: 094fe9aafcfb6ab4dba26e0e649e4d18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5883450055868084730, guid: 094fe9aafcfb6ab4dba26e0e649e4d18, type: 3}
       propertyPath: m_LocalRotation.w

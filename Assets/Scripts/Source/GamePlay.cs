@@ -6,8 +6,6 @@ namespace Tetris3D
 {
     public class GamePlay : MonoBehaviour
     {
-        public static bool playing;
-
         public Material skyMaterial1;
         public Material skyMaterial2;
         public Material skyMaterial3;
@@ -64,12 +62,16 @@ namespace Tetris3D
         public float tetrominoMinimumZ =  -0.5f;
         public float tetrominoMaximumZ = 0.5f;
 
+        public Vector3 initialPosition; // Initial player position
         public Vector3 initialTetrominoPosition; // Initial player position
 
         // Tetromino movement
-        public float sidewaysDisplacement = 10f;
-        public float forwardDisplacement = 10f;
-        public float upwardDisplacement = 10f;
+        public float playerSidewaysDisplacement = 10f;
+        public float playerForwardDisplacement = 10f;
+        public float playerUpwardDisplacement = 10f;
+        public float tetrominoSidewaysDisplacement = 10f;
+        public float tetrominoForwardDisplacement = 10f;
+        public float tetrominoUpwardDisplacement = 5f;
 
         public static GameObject currentTetromino;
         public static GameObject nextTetromino;
@@ -77,6 +79,30 @@ namespace Tetris3D
 
         void Start()
         {
+            GameLogic.initialPosition = initialPosition;
+            GameLogic.initialTetrominoPosition = initialTetrominoPosition;
+            GameLogic.playerSidewaysDisplacement = playerSidewaysDisplacement;
+            GameLogic.playerForwardDisplacement = playerForwardDisplacement;
+            GameLogic.playerUpwardDisplacement = playerUpwardDisplacement;
+            GameLogic.tetrominoSidewaysDisplacement = tetrominoSidewaysDisplacement;
+            GameLogic.tetrominoForwardDisplacement = tetrominoForwardDisplacement;
+            GameLogic.tetrominoUpwardDisplacement = tetrominoUpwardDisplacement;
+            GameLogic.playerMovementRestrictions = new MovementRestrictions(
+                playerMinimumX,
+                playerMaximumX,
+                playerMinimumY,
+                playerMaximumY,
+                playerMinimumZ,
+                playerMaximumZ
+            );
+            GameLogic.tetrominoMovementRestrictions = new MovementRestrictions(
+                tetrominoMinimumX,
+                tetrominoMaximumX,
+                tetrominoMinimumY,
+                tetrominoMaximumY,
+                tetrominoMinimumZ,
+                tetrominoMaximumZ
+            );
             // Hide all tetrominoes
             birdTetromino.SetActive(false);
             butterflyTetromino.SetActive(false);
@@ -99,10 +125,11 @@ namespace Tetris3D
                 snakeTetromino,
                 tesseractTetromino
             });
-
-            UnityEngine.Debug.Log($"Starting with {currentTetromino.tag} tetromino");
-
+            GameLogic.resetTetrominoTransform(currentTetromino);
             currentTetromino.SetActive(true);
+            GameLogic.currentTetromino = currentTetromino;
+            UnityEngine.Debug.Log($"Starting with {currentTetromino.tag}");
+
             nextTetromino = GameLogic.getRandomGameObject(new GameObject[]{
                 birdTetromino,
                 butterflyTetromino,
@@ -115,9 +142,8 @@ namespace Tetris3D
                 tesseractTetromino
             });
             UnityEngine.Debug.Log($"Next tetromino: {nextTetromino.tag}");
+            GameLogic.nextTetromino = nextTetromino;
 
-            GameLogic.initialTetrominoPosition = initialTetrominoPosition;
-            GameLogic.resetTetrominoTransform(currentTetromino);
 
             // Set random materials for the sky and ground
             var tetrominoMaterial = GameLogic.getRandomMaterial(new Material[]{
@@ -159,25 +185,30 @@ namespace Tetris3D
                 groundMaterial9
             });
             GameLogic.setGameObjectMaterial(ground, groundMaterial);
+
+            GameLogic.tetrominoReady = true;
         }
 
 
         void FixedUpdate()
         {
-            if (!currentTetromino) {
-                currentTetromino = tesseractTetromino;
-            }
-            // var rigidBody = currentTetromino.GetComponent<Rigidbody>();
-            var displacement = new Vector3(0, -upwardDisplacement * Time.fixedDeltaTime, 0);
-            var newPosition = currentTetromino.transform.position + displacement;
-            UnityEngine.Debug.Log($"Current Tetromino position ({currentTetromino.transform.position.x},{currentTetromino.transform.position.y},{currentTetromino.transform.position.z})");
-            UnityEngine.Debug.Log($"Tentative new position ({newPosition.x},{newPosition.y},{newPosition.z})");
-            if (newPosition.x <= tetrominoMaximumX && newPosition.x >= tetrominoMinimumX &&
-                    newPosition.y <= tetrominoMaximumY && newPosition.y >= tetrominoMinimumY &&
-                    newPosition.z <= tetrominoMaximumZ && newPosition.z >= tetrominoMinimumZ
-                )
-            {
-                currentTetromino.transform.position = newPosition;
+            if (!GameLogic.gameIsPaused &&
+                !GameLogic.playerMovingTetromino &&
+                GameLogic.tetrominoReady &&
+                !GameLogic.tetrominoHasCollided
+            ) {
+                if (!currentTetromino) {
+                    currentTetromino = tesseractTetromino;
+                }
+                var body = currentTetromino.GetComponent<Rigidbody>();
+                GameLogic.moveTetromino(body, RelativeMovementDirection.MOVE_DOWN, new MovementRestrictions(
+                    tetrominoMinimumX,
+                    tetrominoMaximumX,
+                    tetrominoMinimumY,
+                    tetrominoMaximumY,
+                    tetrominoMinimumZ,
+                    tetrominoMaximumZ
+                ));
             }
         }
     }

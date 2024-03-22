@@ -7,44 +7,16 @@ namespace Tetris3D
     public class PlayerMovement : MonoBehaviour
     {
         public Rigidbody body;
-        public float sidewaysDisplacement = 10f;
-        public float forwardDisplacement = 10f;
-        public float upwardDisplacement = 10f;
-        public float unitRotation = 500f;
-        public float minimumX = 1f;
-        public float maximumX = 1f;
-        public float minimumY = 1f;
-        public float maximumY = 1f;
-        public float minimumZ = 1f;
-        public float maximumZ = 1f;
-        private Vector3 initialPosition;
 
         // Start is called before the first frame update
         void Start()
         {
-            UnityEngine.Debug.Log("Game Start!");
-            var bodyAtStart = this.gameObject.GetComponent<Rigidbody>();
-            initialPosition = new Vector3(bodyAtStart.position.x, bodyAtStart.position.y, bodyAtStart.position.z);
         }
 
         // Update is called once per frame (affecting physics)
         void FixedUpdate()
         {
-            var movementRestrictions = new MovementRestrictions(
-                minimumX,
-                maximumX,
-                minimumY,
-                maximumY,
-                minimumZ,
-                maximumZ
-            );
-
-            GameLogic.initialPosition = initialPosition;
-            GameLogic.body = body;
-            GameLogic.sidewaysDisplacement = sidewaysDisplacement;
-            GameLogic.forwardDisplacement = forwardDisplacement;
-            GameLogic.upwardDisplacement = upwardDisplacement;
-            GameLogic.unitRotation = unitRotation;
+            var movementRestrictions = GameLogic.playerMovementRestrictions;
 
             if (Input.GetKeyUp(KeyCode.Space))
             {

@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Source\GameStatsUpdate.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\Arena.cs" />
     <Compile Include="Assets\Scripts\Source\FollowPlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Source\TetrominoMovement.cs" />
     <Compile Include="Assets\Packages\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\RelativeMovementDirection.cs" />
   </ItemGroup>
