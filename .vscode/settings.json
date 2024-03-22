@@ -5,8 +5,6 @@
         "**/.gitmodules": true,
         "build/": false,
         "Build/": false,
-        "Library/": true,
-        "library/": true,
         "temp/": true,
         "Temp/": true
     },

@@ -64,17 +64,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Packages\SpaceSkies Free\Demo\Scripts\LookCamera.cs" />
-    <Compile Include="Assets\Scripts\GamePlay.cs" />
-    <Compile Include="Assets\Scripts\StaticInvisibilityBehaviour.cs" />
-    <Compile Include="Assets\Scripts\FollowPlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\Logic\Tetromino.cs" />
-    <Compile Include="Assets\Scripts\RotateInXAxis.cs" />
-    <Compile Include="Assets\Scripts\GameStatsUpdate.cs" />
-    <Compile Include="Assets\Scripts\Logic\RelativeMovementDirection.cs" />
-    <Compile Include="Assets\Scripts\Logic\MovementRestrictions.cs" />
-    <Compile Include="Assets\Scripts\Logic\GameLogic.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\ArenaFloor.cs" />
+    <Compile Include="Assets\Scripts\Source\RotateInXAxis.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\Tetromino.cs" />
+    <Compile Include="Assets\Scripts\Source\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\GameLogic.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\MovementRestrictions.cs" />
+    <Compile Include="Assets\Scripts\Source\GamePlay.cs" />
+    <Compile Include="Assets\Scripts\Source\StaticInvisibilityBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\ArenaSubPiece.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\ArenaRow.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\SubPiece.cs" />
+    <Compile Include="Assets\Scripts\Source\GameStatsUpdate.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\Arena.cs" />
+    <Compile Include="Assets\Scripts\Source\FollowPlayerMovement.cs" />
     <Compile Include="Assets\Packages\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\RelativeMovementDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packages\TextMesh Pro\Shaders\TMPro.cginc" />

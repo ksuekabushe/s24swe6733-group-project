@@ -1,2 +1,4 @@
 Logs/**
 Temp/**
+Library/PackageCache/**
+obj/Debug/**
