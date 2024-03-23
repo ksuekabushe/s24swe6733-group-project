@@ -89,3 +89,7 @@ Tasks have been ordered in organic way allowing the game to gain more useful fea
 ## Updated game play screenshots
 
 ![](readme_assets/gameplay.png)
+
+## CI/CD
+* Tetris CI is configured in Github Actions and when the code is pushed to master, it builds the creats the artifacts
+* The Game is deployed in itch.io using butler push tool which is automated through CD pipeline. The game is accessed in the url https://dsekarksu.itch.io/tetris-3d
