@@ -186,6 +186,9 @@ namespace Tetris3D
 
         public static void movePlayer(Rigidbody playerBody, RelativeMovementDirection movement, MovementRestrictions movementRestrictions)
         {
+            if (gameIsPaused) {
+                return; // DO NOT MOVE IF GAME IS PAUSED
+            }
             var displacement = new Vector3(0, 0, 0);
             UnityEngine.Debug.Log(
                 $"Current player restrictions: ({movementRestrictions.minimum_x},{movementRestrictions.maximum_x},{movementRestrictions.minimum_y},{movementRestrictions.maximum_y},{movementRestrictions.minimum_z},{movementRestrictions.maximum_z},)");
