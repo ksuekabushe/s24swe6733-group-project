@@ -16,7 +16,7 @@ Group III's project for SWE 6733 in Spring 2024.
 
 ### Trivia
 
-Tetris is a classic and iconic puzzle video game that was created by Alexey Pajitnov in 1984. The game's name is derived from the combination of the Greek word "tetra," meaning four, and "tennis," which was Pajitnov's favorite sport. Tetris was  a popular game even before it was commercialized as many people had acquired copies on floppy disks before it was ever introduced to consoles such as the GameBoy. 
+Tetris is a classic and iconic puzzle video game that was created by Alexey Pajitnov in 1984. The game's name is derived from the combination of the Greek word "tetra," meaning four, and "tennis," which was Pajitnov's favorite sport. Tetris was  a popular game even before it was commercialized as many people had acquired copies on floppy disks before it was ever introduced to consoles such as the GameBoy.
 
 ### How to win
 
@@ -32,11 +32,11 @@ Points are awarded for each floor destruction and even more for the destruction 
 
 ### Near term
 
-* Re-imagined game: Tetris 3D does not just add a third dimension to the blocks, it also adds it to the arena. It takes the game and creates a world around it. Now you can view the blocks from all angles and rotate pieces around new axes. 
+* Re-imagined game: Tetris 3D does not just add a third dimension to the blocks, it also adds it to the arena. It takes the game and creates a world around it. Now you can view the blocks from all angles and rotate pieces around new axes.
 
 * New mechanics: Tetris 3D adds new mechanics to the game by allowing movements that were either trivial or inconsequential in two dimensions but that change the game's dynamic and difficulty by allowing blocks and the floors to move in three dimensions.
 
-* Simple fun: Tetris 3D is a timeless and fun experience that can be played for days without repetition. It is the perfect pass-time: simple, fun, create. 
+* Simple fun: Tetris 3D is a timeless and fun experience that can be played for days without repetition. It is the perfect pass-time: simple, fun, create.
 
 ### Long term
 
@@ -86,6 +86,6 @@ We have set two levels of priorities:
 
 Tasks have been ordered in organic way allowing the game to gain more useful features and by placing dependencies first (like the terrain and sky before trying to move pieces in the game).
 
-## Initial mock game play screenshots
+## Updated game play screenshots
 
 ![](readme_assets/gameplay.png)
