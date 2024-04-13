@@ -204,6 +204,174 @@ namespace Tetris3D.Logic
 
             Assert.Equals(_minVector, rigidBody.position);
         }
+        
+        [UnityTest]
+        public IEnumerator DeleteNoneTest()
+        {
+            SubPiece[] onePieceTetrominoSubPieces = new SubPiece[]
+            {
+                new SubPiece() { center: (20, 10, 10)}
+            };
+
+            Arena onePieceArena = new Arena()
+            {
+                Floors = new ArenaFloors[]{new ArenaFloor()
+                {
+                    Rows= new ArenaRow[]
+                    {
+                        new ArenaRow()
+                        {
+                            pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0, 0, 0)}
+                        };
+                };
+                };
+            };
+
+            GameLogic.updateArenaSubPieces(onePieceArena, onePieceTetrominoSubPieces);
+
+            Assert.Equals(GameLogic.floorsDestroyed, 0);
+        }
+
+        [UnityTest]
+        public IEnumerator DeleteOneTest()
+        {
+            SubPiece[] onePieceTetrominoSubPieces = new SubPiece[] { new SubPiece() { center: (0, 0, 0)}};
+            Arena onePieceArena = new Arena()
+            {
+                Floors = new ArenaFloors[]
+                {
+                    new ArenaFloor()
+                    {
+                        Rows= new ArenaRow[]
+                        {
+                            new ArenaRow()
+                            {
+                                pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0, 0, 0)}};
+                            };
+                        };
+                    };
+                };
+        };
+
+            GameLogic.updateArenaSubPieces(onePieceArena, onePieceTetrominoSubPieces);
+
+            Assert.Equals(GameLogic.floorsDestroyed, 1);
+        }
+
+        [UnityTest]
+        public IEnumerator DeleteTwoTest()
+        {
+            SubPiece[] onePieceTetrominoSubPieces = new SubPiece[]
+            {
+                new SubPiece(){center: (0, 0, 0)},
+        new SubPiece() { center: (0, 1, 0)},
+        };
+
+            Arena onePieceArena = new Arena()
+            {
+                Floors = new ArenaFloors[]
+                {
+                    new ArenaFloor()
+                    {
+                        Rows= new ArenaRow[]
+                        {
+                            new ArenaRow()
+                            {
+                                pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0, 0, 0)}}
+                            };
+                        };
+            },
+            new ArenaFloor()
+                    {
+                        Rows = new ArenaRow[]
+                            {
+                                new ArenaRow()
+                                {
+                                    pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0,1,0)} }
+                                };
+                            };
+                    };
+                };
+            };
+            Assert.Equals(GameLogic.floorsDestroyed, 2);
+        }
+
+        [UnityTest]
+        public IEnumerator RegisterOneMatching()
+        {
+            SubPiece[] onePieceTetrominoSubPieces = new SubPiece[]
+            {
+                    new SubPiece(){center: (0, 0, 0)},
+            new SubPiece() { center: (0, 3, 0) },
+        };
+
+            Arena onePieceArena = new Arena()
+            {
+                Floors = new ArenaFloors[]
+                {
+                    new ArenaFloor()
+                    {
+                        Rows= new ArenaRow[]
+                        {
+                            new ArenaRow()
+                            {
+                                pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0, 0, 0)}}
+                            };
+                        };
+            },
+            new ArenaFloor()
+                    {
+                        Rows = new ArenaRow[]
+                        {
+                            new ArenaRow()
+                            {
+                                pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0,1,0)} }
+                            };
+                        };
+                    };
+                };
+            };
+            Assert.Equals(GameLogic.findMatchingArenaSubPieces().Length, 1);
+        }
+
+        [UnityTest]
+        public IEnumerator RegisterNoMatching()
+        {
+            SubPiece[] onePieceTetrominoSubPieces = new SubPiece[]
+            {
+                        new SubPiece(){center: (0, 2, 0)},
+                new SubPiece() { center: (0, 3, 0) },
+        };
+
+            Arena onePieceArena = new Arena()
+            {
+                Floors = new ArenaFloors[]
+                {
+                    new ArenaFloor()
+                    {
+                        Rows= new ArenaRow[]
+                        {
+                            new ArenaRow()
+                            {
+                                pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0, 0, 0)}}
+                            };
+                        };
+            },
+            new ArenaFloor()
+                    {
+                        Rows = new ArenaRow[]
+                        {
+                            new ArenaRow()
+                            {
+                                pieces = new ArenaSubPiece[]{ new ArenaSubPiece(){center: (0,1,0)} }
+                            };
+                        };
+                    };
+                };
+            };
+            Assert.Equals(GameLogic.findMatchingArenaSubPieces().Length, 0);
+        }
+
         #endregion
 
     }
