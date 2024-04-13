@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Source\Logic\GameLogic.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\MovementRestrictions.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\ArenaSubPiece.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\ArenaSubPieceProperties.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\ArenaRow.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\SubPiece.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\Arena.cs" />

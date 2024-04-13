@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Source\Logic\ArenaFloor.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\TetrominoCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\Source\RotateInXAxis.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\HelpMenuHandler.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\Tetromino.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\StartMenuHandler.cs" />
     <Compile Include="Assets\Scripts\Source\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\ArenaSubPieceProperties.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\GameLogic.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\MovementRestrictions.cs" />
     <Compile Include="Assets\Scripts\Source\GamePlay.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\Scripts\Source\Logic\Arena.cs" />
     <Compile Include="Assets\Scripts\Source\FollowPlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Source\TetrominoMovement.cs" />
+    <Compile Include="Assets\Scripts\Source\Logic\FloorRotation.cs" />
     <Compile Include="Assets\Scripts\Source\Logic\RelativeMovementDirection.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -954,14 +957,6 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
       <Private>False</Private>
@@ -972,6 +967,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.TextMeshPro.csproj" />
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>
